@@ -1,0 +1,30 @@
+@(tasks: List[(String, String, String)], taskForm: Form[(String, String)])
+
+@import helper._
+
+@main("Todo list") {
+    <div class="page-header">
+    	<h1>Git cheatsheet</h1>
+    </div>
+    <div class="row">
+  		<div class="span3 bs-docs-sidebar">
+        	<ul class="nav nav-list bs-docs-sidenav affix">
+	          @tasks.map { task =>
+	          <li class><a href="#@task._1"><i class="icon-chevron-right"></i> @task._1 </a></li> 
+	          }
+	        </ul>
+      	</div>
+  		<div class="span9">
+  			@tasks.map { task =>
+  				 <section id="@task._1">
+  				 	<div class="page-header">
+            			<h2>@task._1</h2>
+          			</div>
+          			<p>@task._2</p>
+          			<pre>@task._3</pre>
+  				 </section>
+            	}
+  		</div>
+	</div>
+    
+}
