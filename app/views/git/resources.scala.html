@@ -1,4 +1,4 @@
-@(tasks: List[(String, String, String)], taskForm: Form[(String, String)])
+@()
 
 @import helper._
 
@@ -7,32 +7,16 @@
 
 <header class="subheader" id="overview">
     <div class="container">
-        <h1>Git cheatsheet</h1>
-
-        <p class="lead">Overview of most important git commands.</p>
+        <h1>Git resources</h1>
     </div>
 </header>
 
 <div class="container">
-    <div class="row">
-        <div class="span3 bs-docs-sidebar">
-            <ul class="nav nav-list bs-docs-sidenav affix">
-                @tasks.map { task =>
-                <li class><a href="#@task._1"><i class="icon-chevron-right"></i> @task._1 </a></li>
-                }
-            </ul>
-        </div>
-        <div class="span9">
-            @tasks.map { task =>
-            <section id="@task._1">
-                <div class="page-header">
-                    <h2>@task._1</h2>
-                </div>
-                <p>@task._2</p>
-                <pre>@task._3</pre>
-            </section>
-            }
-        </div>
-    </div>
+    <ul class="nav nav-list bs-docs-sidenav affix">
+        <li class><a href="https://www.youtube.com/watch?v=ZDR433b0HJY">Introduction to Git with Scott Chacon of GitHub</a></li>
+        <li class><a href="http://git-scm.com/book/en">Pro Git</a></li>
+        <li class><a href="http://gitref.org/index.html">Git quick reference</a></li>
+    </ul>
 </div>
+
 }

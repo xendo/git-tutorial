@@ -3,28 +3,36 @@
 @import helper._
 
 @main("Todo list") {
-    <div class="page-header">
-    	<h1>Git cheatsheet</h1>
+
+
+<header class="subheader" id="overview">
+    <div class="container">
+        <h1>Git cheatsheet</h1>
+
+        <p class="lead">Overview of most important git commands.</p>
     </div>
+</header>
+
+<div class="container">
     <div class="row">
-  		<div class="span3 bs-docs-sidebar">
-        	<ul class="nav nav-list bs-docs-sidenav affix">
-	          @tasks.map { task =>
-	          <li class><a href="#@task._1"><i class="icon-chevron-right"></i> @task._1 </a></li> 
-	          }
-	        </ul>
-      	</div>
-  		<div class="span9">
-  			@tasks.map { task =>
-  				 <section id="@task._1">
-  				 	<div class="page-header">
-            			<h2>@task._1</h2>
-          			</div>
-          			<p>@task._2</p>
-          			<pre>@task._3</pre>
-  				 </section>
-            	}
-  		</div>
-	</div>
-    
+        <div class="span3 bs-docs-sidebar">
+            <ul class="nav nav-list bs-docs-sidenav affix">
+                @tasks.map { task =>
+                <li class><a href="#@task._1"><i class="icon-chevron-right"></i> @task._1 </a></li>
+                }
+            </ul>
+        </div>
+        <div class="span9">
+            @tasks.map { task =>
+            <section id="@task._1">
+                <div class="page-header">
+                    <h3>@task._1</h3>
+                </div>
+                <p>@task._2</p>
+                <pre>@task._3</pre>
+            </section>
+            }
+        </div>
+    </div>
+</div>
 }
