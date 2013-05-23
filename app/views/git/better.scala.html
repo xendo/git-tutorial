@@ -1,0 +1,49 @@
+@(advantages: List[(Int,String, String)], disadvantages: List[(Int,String, String)])
+
+@import helper._
+
+@main("Todo list") {
+
+
+<header class="subheader" id="overview">
+    <div class="container">
+        <h1>Why Git?</h1>
+    </div>
+</header>
+
+<div class="container">
+    <div class="accordion" id="accordion2">
+        @advantages.map { advantage =>
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#a@advantage._1">
+                    <p class="text-success">@advantage._2</p>
+                </a>
+            </div>
+            <div id="a@advantage._1" class="accordion-body collapse out">
+                <div class="accordion-inner">
+                    @advantage._3
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+    <div class="accordion" id="accordion3">
+        @disadvantages.map { disadvantage =>
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#d@disadvantage._1">
+                    <p class="text-error">@disadvantage._2</p>
+                </a>
+            </div>
+            <div id="d@disadvantage._1" class="accordion-body collapse out">
+                <div class="accordion-inner">
+                    @disadvantage._3
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
+
+}
