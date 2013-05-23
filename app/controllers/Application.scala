@@ -26,7 +26,7 @@ object Application extends Controller {
         ("push","Update remote refs along with associated objects","% git push origin master"),
         ("fetch","Download objects and refs from another repository","% git fetch"),
         ("merge","Join two or more development histories together","% git merge branch_name \n% git merge branch1_name branch2_name ..."),
-        ("branch","List, create, or delete branches","% git branch \n% git branch branch name\n% git branch -d branch name"),
+        ("branch","List, create, or delete branches","% git branch \n% git branch branch name\n% git branch -d branch name\n% git branch -a -v"),
         ("checkout","Checkout a branch or paths to the working tree","% git checkout branch_name \n% git checkout -b new_branch_name")
     )
     
